@@ -21,27 +21,7 @@ document.getElementsByTagName('body')[0].appendChild(inputValue2);
 var buttonStart = document.createElement('button');
 buttonStart.id = 'startMRU';
 buttonStart.innerHTML = '->';
-buttonStart.onclick = function myMove(){
-  var value1 = parseFloat(inputValue1.value);
-  var value2 = parseFloat(inputValue2.value);
-  var pos1 = parseInt(window.getComputedStyle(myAnimation1, null).left.replace('px', ''));
-  var pos2 = parseInt(window.getComputedStyle(myAnimation2, null).left.replace('px', ''));
-  divTimer.innerHTML = 0;
-  clearInterval(id);
-  id = setInterval(frame, 1000);
-  function frame() {
-    if (pos1 >= d || pos2 >= d) {
-      clearInterval(id);
-    } else {
-      pos1 = pos1 + value1; 
-      pos2 = pos2 + value2;
-      divTimer.innerHTML++;
-      myAnimation1.style.left = pos1.toFixed(2) + 'px'; 
-      myAnimation2.style.left = pos2.toFixed(2) + 'px';
-      console.log(pos1.toFixed(2), pos2.toFixed(2), Math.abs(pos1.toFixed(2)-d));
-    }
-  }
-};
+buttonStart.onclick = myMove;
 document.getElementsByTagName('body')[0].appendChild(buttonStart);
 
 var myContainer = document.createElement('div');
@@ -62,5 +42,43 @@ var c = parseInt(b.replace("px",""));
 var c1 = parseInt(b1.replace("px",""));
 var d = c - c1;
 
-
+function myMove(){
+  var value1 = parseFloat(inputValue1.value);
+  var value2 = parseFloat(inputValue2.value);
+  var pos1 = parseInt(window.getComputedStyle(myAnimation1, null).left.replace('px', ''));
+  var pos2 = parseInt(window.getComputedStyle(myAnimation2, null).left.replace('px', ''));
+  divTimer.innerHTML = 0;
+  clearInterval(id);
+  id = setInterval(frame, 1000);
+  function frame() {
+    if (pos1 + value1 >= d & pos2 + value2 >= d) {
+      myAnimation1.style.left = d + 'px';
+      myAnimation2.style.left = d + 'px';
+      clearInterval(id);
+      console.log(pos1.toFixed(2), pos2.toFixed(2), Math.abs(pos1.toFixed(2)-d));
+    } 
+    else if (pos1 + value1 >= d) {
+      myAnimation1.style.left = d + 'px';
+      pos2 = pos2 + value2;
+      myAnimation2.style.left = pos2.toFixed(2) + 'px';
+      clearInterval(id); 
+      console.log(pos1.toFixed(2), pos2.toFixed(2), Math.abs(pos1.toFixed(2)-d));           
+    }
+    else if (pos2 + value2 >= d) {
+      myAnimation2.style.left = d + 'px';
+      pos1 = pos1 + value1; 
+      myAnimation1.style.left = pos1.toFixed(2) + 'px'; 
+      clearInterval(id); 
+      console.log(pos1.toFixed(2), pos2.toFixed(2), Math.abs(pos1.toFixed(2)-d));           
+    }
+    else {
+      pos1 = pos1 + value1; 
+      pos2 = pos2 + value2;
+      divTimer.innerHTML++;
+      myAnimation1.style.left = pos1.toFixed(2) + 'px'; 
+      myAnimation2.style.left = pos2.toFixed(2) + 'px';
+      console.log(pos1.toFixed(2), pos2.toFixed(2), Math.abs(pos1.toFixed(2)-d));
+    }
+  }
+}
 
