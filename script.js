@@ -1,46 +1,5 @@
 /* jshint esversion: 6 */
 
-import jss from "https://unpkg.com/jss/dist/jss.js";
-import preset from "https://unpkg.com/jss-preset-default/dist/jss-preset-default.js";
-
-jss.setup(preset());
-
-const styles = {
-  wrapper: {
-    padding: 40,
-    background: "#f7df1e",
-    textAlign: "center"
-  },
-  title: {
-    font: {
-      size: 40,
-      weight: 900
-    },
-    color: "#24292e"
-  },
-  link: {
-    color: "#24292e",
-    "&:hover": {
-      opacity: 0.5
-    }
-  }
-};
-
-const { classes } = jss.createStyleSheet(styles).attach();
-
-document.body.innerHTML = `
-  <div class="${classes.wrapper}">
-    <h1 class="${classes.title}">Hello JSS!</h1>
-    <a
-      class=${classes.link}
-      href="http://cssinjs.org/"
-      traget="_blank"
-    >
-      See docs
-    </a>
-  </div>
-`;
-
 var a = document.getElementById("myContainer");
 var a1 = document.getElementById("myAnimation");
 var b = window.getComputedStyle(a, null).width;
