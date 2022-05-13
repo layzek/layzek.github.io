@@ -1,5 +1,9 @@
 /* jshint esversion: 6 */
 
+var style = document.createElement('style');
+style.innerHTML = '#myContainer { width: 400px; height: 100px; position: relative; background: #fffdd0;} #myAnimation { width: 50px; height: 50px; left: 0px; position: absolute; background: red; } #myAnimation2 { width: 50px; height: 50px; bottom: 0px; position: absolute; background: green; }';
+document.getElementsByTagName('head')[0].appendChild(style);
+
 var a = document.getElementById("myContainer");
 var a1 = document.getElementById("myAnimation");
 var b = window.getComputedStyle(a, null).width;
