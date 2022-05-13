@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 
-import jss from "jss";
-import preset from "jss-preset-default";
+import jss from "https://unpkg.com/jss/dist/jss.min.js";
+import preset from "https://unpkg.com/jss-preset-default/dist/jss-preset-default.min.js";
 
 jss.setup(preset());
 
