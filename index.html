@@ -9,10 +9,16 @@
 
 <body>
   <div>Tiempo (segundos):
-    <p id="timer"></p>
+    <span id="timer"></span>
   </div>
-  <input id="value1" type="number" value="0">
-  <input id="value2" type="number" value="0">
+  <div>
+    <span>Velocidad 1:</span><br>
+    <span id="showValue1"></span>
+    <input type="range" min="0" max="100" value="50" class="slider" id="value1" value="0" oninput="sliderChange(this.value)"><br>
+    <span>Velocidad 2:</span><br>
+    <span id="showValue2"></span>
+    <input type="range" min="1" max="100" value="50" class="slider" id="value2" value="0" oninput="sliderChange(this.value)">
+  </div>
   <button id="startMRU">-></button>
   <div id="myContainer">
     <div id="myAnimation1"></div>

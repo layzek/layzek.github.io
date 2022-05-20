@@ -2,6 +2,15 @@
     display: inline;
 }
 
+.slider {
+    -webkit-appearance: none;
+    background: #e4e9b5;
+    outline: black;
+  }
+.slider::-moz-range-thumb {
+    background: #696d5f;
+  }
+
 #myContainer {
     width: 525px;
     height: 75px;
