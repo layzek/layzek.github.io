@@ -6,8 +6,11 @@ let pos2 = parseInt(window.getComputedStyle(myAnimation2, null).left.replace('px
 let id = null;  
 let maxSpace = parseInt(window.getComputedStyle(myContainer, null).width.replace("px","")) - parseInt(window.getComputedStyle(myAnimation1, null).width.replace("px",""));
 
-function sliderChange(val) {
+function sliderChange1(val) {
   document.getElementById('showValue1').innerHTML = val;
+}
+function sliderChange2(val) {
+  document.getElementById('showValue2').innerHTML = val;
 }
 
 document.getElementById('timer').innerHTML = time;
