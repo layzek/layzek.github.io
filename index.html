@@ -12,17 +12,20 @@
     <span id="timer"></span>
   </div>
   <div>
-    <span>Velocidad 1:</span><br>
-    <span id="showValue1"></span>
-    <input type="range" min="0" max="100" value="50" class="slider" id="value1" value="0" oninput="sliderChange1(this.value)"><br>
-    <span>Velocidad 2:</span><br>
-    <span id="showValue2"></span>
-    <input type="range" min="1" max="100" value="50" class="slider" id="value2" value="0" oninput="sliderChange2(this.value)">
+    <span>Velocidad 1:</span>
+    <span id="showValue1">25</span><br>
+    <input autocomplete="off" input type="range" min="0" max="100" value="25" class="slider" id="value1" value="0" oninput="sliderChange1(this.value)"><br>
+    <span>Velocidad 2:</span>
+    <span id="showValue2">25</span><br>
+    <script></script>
+    <input autocomplete="off" input type="range" min="0" max="50" value="25" class="slider" id="value2" value="0" oninput="sliderChange2(this.value)">
   </div>
   <button id="startMRU">-></button>
   <div id="myContainer">
     <div id="myAnimation1"></div>
     <div id="myAnimation2"></div>
+  </div>
+  <div id="floor">
   </div>
 </body>
 

@@ -16,13 +16,12 @@ function sliderChange2(val) {
 document.getElementById('timer').innerHTML = time;
 document.getElementById('startMRU').onclick = function myMove() {
 
-  clearInterval(id);
-  id = setInterval(frame, 1000);
   let value1 = parseFloat(document.getElementById('value1').value);
   let value2 = parseFloat(document.getElementById('value2').value);
+  clearInterval(id);
+  id = setInterval(frame, 1000);
 
   function frame() {
-    ifCollide();
     if (pos1 + value1 >= maxSpace & pos2 + value2 >= maxSpace) {
       myAnimation1.style.left = maxSpace + 'px';
       myAnimation2.style.left = maxSpace + 'px';
@@ -48,17 +47,9 @@ document.getElementById('startMRU').onclick = function myMove() {
       pos2 = pos2 + value2;
       time++;
       document.getElementById('timer').innerHTML = time;
-      myAnimation1.style.left = pos1.toFixed(2) + 'px'; 
-      myAnimation2.style.left = pos2.toFixed(2) + 'px';
-      console.log(pos1.toFixed(2), pos2.toFixed(2), Math.abs(pos1.toFixed(2)- maxSpace));
-    }
-    function ifCollide () {
-      if (pos1 == pos2) {
-      clearInterval(id);
-      myAnimation1.style.background = '#ffd700';
-      myAnimation2.style.background = '#ffd700';
-
-    }
-  }
+      myAnimation1.style.left = pos1 + 'px'; 
+      myAnimation2.style.left = pos2 + 'px';
+      console.log(pos1, pos2), Math.abs(pos1 - maxSpace);
+    } 
   }
 };
