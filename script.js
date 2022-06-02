@@ -1,10 +1,10 @@
 /*jshint esversion: 6 */ 
 
 let time = 0;
-let pos1 = parseInt(window.getComputedStyle(myAnimation1, null).left.replace('px', ''));
-let pos2 = parseInt(window.getComputedStyle(myAnimation2, null).left.replace('px', ''));
+let pos1 = parseInt(window.getComputedStyle(myAnimation1, null).left);
+let pos2 = parseInt(window.getComputedStyle(myAnimation2, null).left);
 let id = null;  
-let maxSpace = parseInt(window.getComputedStyle(myContainer, null).width.replace("px","")) - parseInt(window.getComputedStyle(myAnimation1, null).width.replace("px",""));
+let maxSpace = parseInt(window.getComputedStyle(myContainer, null).width) - parseInt(window.getComputedStyle(myAnimation1, null).width);
 
 function sliderChange1(val) {
   document.getElementById('showValue1').innerHTML = val;

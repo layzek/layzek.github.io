@@ -1,3 +1,16 @@
+.mainDiv {
+    width: 25%;
+    height: 35%;
+    top: 2.5%;
+    font-size: 100%;
+    text-align: left;
+    position: absolute;
+    right: 1%; 
+    background: #e09a30;
+    border-radius: 1%;
+    border: 2px solid black;
+  }
+
 #timer {
     display: inline;
   }
@@ -6,9 +19,13 @@
     -webkit-appearance: none;
     background: #e4e9b5;
     outline: black;
+    width: 24vw;
+    height: 2vw;
   }
 .slider::-moz-range-thumb {
-    background: #696d5f;
+    background: #000000;
+    height: 2vw;
+    width: 2vw;
   }
 
 #myContainer {
@@ -32,7 +49,7 @@
     width: 5%;
     padding-top: 5%;
     bottom: 0px;
-    left: 175px;
+    left: 17.5%;
     position: absolute;
     background: green;
     outline: 1px solid #000;
