@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<meta charset="utf-8"/>
-<html>
+<html lang="en">
+	<head>
+		<title>MRU</title>
+		<meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="icon" href="img/favicon.png">
+	</head>
+	<body>
+		<div id="background"></div>
+		<div id="floor"></div>
+		<img id="box1" src="redcar.png">
+		<img id="box2" src="orangecar.png">
 
-<head>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel='stylesheet' type='text/css' href='style.css'>
-</head>
+		<button id="play">Play</button>
 
-<body>
-  <div>Tiempo (segundos):
-    <span id="timer"></span>
-  </div>
-  <div>
-    <span>Velocidad 1:</span><br>
-    <span id="showValue1"></span>
-    <input type="range" min="0" max="100" value="50" class="slider" id="value1" value="0" oninput="sliderChange1(this.value)"><br>
-    <span>Velocidad 2:</span><br>
-    <span id="showValue2"></span>
-    <input type="range" min="1" max="100" value="50" class="slider" id="value2" value="0" oninput="sliderChange2(this.value)">
-  </div>
-  <button id="startMRU">-></button>
-  <div id="myContainer">
-    <div id="myAnimation1"></div>
-    <div id="myAnimation2"></div>
-  </div>
-</body>
+		<span id="distanceRed">&nbsp;</span>
+		<span id="distanceOrange">&nbsp;</span>
+		<span id="timer1">Tiempo 1: </span>
+		<span id="timer2">Tiempo 2: </span>
 
-<script type="text/javascript" src="script.js">
-</script>
+		<div id="medidas">
+			<label for="medidor1">Velocidad 1</label>
+			<input type="range" name="medidor1" id="medidor1" min="0" max="50" oninput="cambioMedidor1(this.value)">
+			<div id="mostrarValor1">25 m/s</div>
+			<br>
+			<label for="medidor2">Velocidad 2</label>
+			<input type="range" name="medidor2" id="medidor2" min="0" max="50" oninput="cambioMedidor2(this.value)">
+			<div id="mostrarValor2">25 m/s</div>
+		</div>
 
+		<script src="jquery.min.js"></script>
+		<script src="index.js"></script>
+	</body>
 </html>
 
