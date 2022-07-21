@@ -48,7 +48,14 @@ document.getElementById('play').addEventListener('click', function() {
 	var speed2 = parseInt(document.getElementById('medidor2').value); 
 	var time2 = (70 / speed2) * 1000; // ms
 	var seconds2 = (time2/1000).toFixed(2);
+
+	var max = Math.max(speed1,speed2)
+	var min = Math.min(speed1,speed2)
+
+	var encuentro = "";
+	if (speed1-speed2 <= 0) {encuentro = "No logran encontrarse"} else {(encuentro = (70/(speed1-speed2)).toFixed(2))+ "segundos"}
 	$("#timer2").html("Tiempo que le tomaria al carro naranja a llegar al final: " + seconds2 + " segundos");
+	$("#encuentro").html("Tiempo de encuentro: " + encuentro);
 
 	let animation1 = box1.animate(keyframes1,{
 		duration: time1,
